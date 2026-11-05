@@ -2,7 +2,6 @@
 
 require('dotenv').config();
 
-
 const express = require('express');
 const log = require('./lib/log');
 const { bootstrap } = require('./lib/bootstrap');
