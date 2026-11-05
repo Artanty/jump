@@ -62,3 +62,4 @@ app.get('/logs', (req, res) => res.type('text/plain').send(log.tail()));
 app.listen(PORT, () => {
   log.info(`jump service listening on :${PORT} (healthz | status | logs)`);
 });
+# pipeline marker
