@@ -1,0 +1,15 @@
+{
+  "name": "jump-back",
+  "version": "0.0.1",
+  "private": true,
+  "description": "SSH jump relay for Timeweb deploys; self-bootstraps the restricted forward-only user at startup",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "build": "node -e \"console.log('build: nothing to do (plain js)')\""
+  },
+  "dependencies": {
+    "dotenv": "^17.2.3",
+    "express": "^5.2.1"
+  }
+}

@@ -147,3 +147,8 @@ vite.config.ts.timestamp-*
 
 # Turbo Repo
 .turbo
+.jump_key
+.jump_key.oneline
+back/node_modules/
+back/.jump_key
+back/.jump_key.oneline
