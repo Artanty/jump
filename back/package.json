@@ -1,6 +1,6 @@
 {
   "name": "jump-back",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "private": true,
   "description": "SSH jump relay for Timeweb deploys; self-bootstraps the restricted forward-only user at startup",
   "main": "app.js",

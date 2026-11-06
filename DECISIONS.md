@@ -12,3 +12,9 @@
 - **VDS clean slate**: userdel -r jump done (1 session) — acceptance test = pipeline deploy recreating it.
 - **serf**: VDS-back generation split by prisma presence (totp exact vs slim variant with printf-built systemd unit-ensure; scp has NO exclude input — strip step removes node_modules/.git/.github before upload; found by validation that a column-0 [Unit] heredoc breaks the inner YAML).
 - **Verified locally**: app smoke test on macOS (dev mode skips os bootstrap): /healthz, /status, /logs + request logging all working; both serf variants generate valid YAML (raw + rendered); githooklib bump via test commit.
+
+## 2026-11-06 — first deploy: service crash-looped (my bad marker line)
+- **Symptom**: slave deploy worked end-to-end (scp, npm install, unit created, restart) but jump.service exit 1 in a loop (restart counter 33).
+- **Root cause** (journalctl, quoted): `SyntaxError: Invalid or unexpected token` at app.js:66 — `# pipeline marker`. That line was appended during the 2026-11-05 githooklib bump test (shell-style `#` comment in a JS file — invalid outside line 1) and rode into the deploy.
+- **Fix**: marker removed, node --check clean, committed (bump rode to 0.0.6, TAG 0.0.6.0.0.0). Lesson: bump-test markers must use the file's real comment syntax (`//` here) or touch a neutral file.
+- **Pending**: user pushes + `-d` → expect unit green, /status userExists=true (user was userdel'd — bootstrap must recreate it), chain test through jump.
