@@ -21,7 +21,7 @@ The public half of an SSH key is not a secret; the private halves never enter an
 
 | var | meaning | default |
 |---|---|---|
-| `PORT` | http port | 3100 |
+| `PORT` | http port | 3100 (serf defaults to 3000 if safe has no PORT row — but VDS back deploys now REJECT a missing PORT; always set a free one, e.g. 3100) |
 | `JUMP_USER` | OS user to ensure | — (required on linux) |
 | `JUMP_PUBLIC_KEY` | public key to authorize | — (required on linux) |
 | `JUMP_KEY_OPTIONS` | authorized_keys options | `restrict,port-forwarding` |
