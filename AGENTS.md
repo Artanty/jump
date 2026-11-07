@@ -6,6 +6,7 @@
    minimal sessions), never explore beyond the task, `sshpass` is BANNED, stop and ask the
    owner on any anomaly. Binary transfers must use keys, never expect/PTY.
 4. **The jump private key never enters this repo or any log** — safe only.
+5. if u need to know how something work look at ../know
 
 ## Guidelines
 
